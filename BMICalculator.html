@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <style media="screen">
+    .container{
+      background-color:white;
+    }
+
+    </style>
+
+    <nav class="navbar navbar-expand-sm ">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="D:\Myproject\Calculator\Mydetails.html">
+          <img src="D:\Myproject\Calculator\DSM.jpg" alt="DSM" style="width:40px;" class="rounded-pill">D.Sai Mohith
+        </a>
+      </div>
+    </nav>
+
+
+
+
+
+<div class="container">
+<h1>BMI Calculation:</h1>
+<p>Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women. View the BMI tables or use the tool below to compute yours.</p>
+
+ <img src="D:\Myproject\Calculator\Cal.jpg" class=" img-responsive" >
+<br><br>
+
+
+
+<table class="table table-bordered table-hover">
+<tr>
+  <td>BMI Description</td>
+  <td>BMI Range</td>
+</tr>
+<tr>
+  <td>Underweight </td>
+  <td> Less than 18.5</td>
+</tr>
+<tr>
+  <td>Normalweight </td>
+  <td> 18.5-24.9</td>
+</tr>
+<tr>
+  <td>Overweight </td>
+  <td> 25-29.9</td>
+</tr>
+<tr>
+  <td>Obesity </td>
+  <td> BMI of 30 or greater</td>
+</tr>
+
+
+
+</table>
+
+<h1>Enter Details</h1>
+ <table class="table table-bordered table-hover">
+   <tr>
+     <td>Weight</td>
+     <td><input id='weight' type="number" class="weight" name="weight" value=""></td>
+   </tr>
+   <tr>
+     <td>height</td>
+     <td><input id = 'height' type="number" class="height" name="height" value=""></td>
+   </tr>
+ </table>
+<button id="myBtn" type="button" class="btn btn-success" onclick="BMI_Cal">Submit</button>
+
+<br>
+<p id="p1" class="p1"></p>
+<p id="p2" class="p2"></p>
+</div>
+
+
+
+
+
+</div>
+
+
+<script>
+document.getElementById("myBtn").addEventListener('click', BMI_Cal);
+  function BMI_Cal(){
+
+    var weight=parseInt(document.getElementById('weight').value);
+    var height=parseInt(document.getElementById('height').value);
+
+    var bmi=(weight)/((height*height)/10000);
+document.getElementById("p1").innerHTML="Your's BMI is "+" "+parseFloat(bmi);
+if(parseFloat(bmi)<18.5){
+console.log("hi");
+  document.getElementById("p2").innerHTML="You Are Underweight ";
+}
+else if (parseFloat(bmi)>18.5&&parseFloat(bmi)<24.9) {
+console.log("hi");
+  document.getElementById("p2").innerHTML="You Are Normalweight ";
+}
+else if(parseFloat(bmi)>25&&parseFloat(bmi)<29.9){
+console.log("hi");
+  document.getElementById("p2").innerHTML="You Are Overweight ";
+}
+else{
+console.log("hi");
+  document.getElementById("p2").innerHTML="You Have Obesity ";
+}
+}
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  </body>
+</html>
